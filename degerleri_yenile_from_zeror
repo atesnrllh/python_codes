@@ -1,0 +1,18 @@
+def degerleri_yenile(liste):
+    # Benzersiz değerleri ve yeni değerlerini tutacak sözlük
+    deger_sozlugu = {}
+
+    # Benzersiz değerleri bul ve sıfırdan başlayarak yeni değerler ata
+    for deger in liste:
+        if deger not in deger_sozlugu:
+            deger_sozlugu[deger] = len(deger_sozlugu)
+
+    # Orijinal listedeki değerleri yeni değerleriyle değiştir
+    yeni_liste = [deger_sozlugu[deger] for deger in liste]
+
+    return yeni_liste
+
+# Fonksiyonu kullanarak listeyi güncelle
+guncellenmis_liste = degerleri_yenile(ornek_liste)
+
+print(guncellenmis_liste)
